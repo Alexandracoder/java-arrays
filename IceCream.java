@@ -1,7 +1,41 @@
+import java.util.Scanner;
+
 public class IceCream {
     public static void main(String[] args) {
-        
-        //Vamos a hacer un programa que haga un pedido online por cada helado ordenado, vamos a escoger cuantas bolas de helado le pondremos y sus sabores.
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("How many scoops of ice cream would you like?: ");
+        int scoopCount = scanner.nextInt();
+        scanner.nextLine(); // Clear input buffer
+
+        String[] flavors = new String[scoopCount];
+
+        System.out.println("\nPerfect! Now choose a flavor for each scoop:");
+        System.out.println("    0. Chocolate");
+        System.out.println("    1. Strawberry");
+        System.out.println("    2. Vanilla");
+
+        for (int i = 0; i < scoopCount; i++) {
+            System.out.print("\n" + i + ". ");
+            flavors[i] = scanner.nextLine();
+        }
+
+        System.out.println("\nThank you for your order! You've chosen the following flavors:");
+        for (int i = 0; i < scoopCount; i++) {
+            System.out.println("    " + i + ". " + flavors[i]);
+        }
+
+        System.out.print("\nIs that correct? Press Enter to continue");
+        scanner.nextLine();
+
+        System.out.println("\nAll set! Please go to the counter — Robotina will give you your ice cream 🍦");
+
+        scanner.close();
+    }
+}
+
+
+//Vamos a hacer un programa que haga un pedido online por cada helado ordenado, vamos a escoger cuantas bolas de helado le pondremos y sus sabores.
 
         //Ejemplo de como debe mostrarse en la terminal:
         /* 
@@ -30,5 +64,3 @@ public class IceCream {
 
         //Mira en el ejemplo los saltos de línea que has de tener.
     
-    }
-} 
